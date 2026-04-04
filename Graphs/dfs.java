@@ -3,7 +3,6 @@ package Graphs;
 import java.util.ArrayList;
 
 public class dfs {
-    class Solution {
     
     static void tdfs(int node, boolean[] vis, ArrayList<Integer> ls, ArrayList<ArrayList<Integer>> adj){
         vis[node] = true;
@@ -24,4 +23,3 @@ public class dfs {
     }
 }
     
-}
