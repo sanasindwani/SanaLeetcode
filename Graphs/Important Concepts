@@ -24,3 +24,9 @@ like Number of Islands, Rotten oranges.
 {-1,0,1,0} for 4 directions or run nested loops from -1 to 1 for 8 directions 
 used in Islands in GFG.
 
+6)Use BFS when: unweighted graph, grid shortest path, minimum moves
+nearest something
+Use DFS when: just traverse, detect cycle, count islands, components
+Use Dijkstra when: weighted shortest path
+
+
