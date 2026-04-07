@@ -61,3 +61,59 @@ public class numberOfIslands {
         return count;
     }
 }
+/*
+class Pair{
+    int x,y;
+    Pair(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+}
+    class Solution {
+    void bfs(char[][] ans, int x, int y){
+        Queue<Pair> q = new LinkedList<>();
+        q.add(new Pair(x,y));
+        ans[x][y] = 'W';  
+
+        int m = ans.length;
+        int n = ans[0].length;
+
+        while(!q.isEmpty()){                 
+            Pair p = q.remove();
+
+            for(int i = -1; i < 2; i++){
+                for(int j = -1; j < 2; j++){
+
+                    int ni = p.x + i;      
+                    int nj = p.y + j;
+
+                    if(ni >= 0 && nj >= 0 && ni < m && nj < n 
+                       && ans[ni][nj] == 'L'){
+
+                        ans[ni][nj] = 'W';
+                        q.add(new Pair(ni,nj));
+                    }
+                }
+            }
+        }
+    }
+
+    public int countIslands(char[][] grid) {
+
+        int m = grid.length;
+        int n = grid[0].length;
+
+        char[][] ans = grid; 
+        int count = 0;
+
+        for(int i = 0; i < m; i++){
+            for(int j= 0; j < n; j++){
+                if(ans[i][j] == 'L'){
+                    bfs(ans,i,j);
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+} */
