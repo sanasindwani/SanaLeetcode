@@ -1,0 +1,26 @@
+
+1)Either push an array to queue
+  Queue<int[]> q = new LinkedList<>();
+  q.add(new int[]{i, j});
+
+  int[] p = q.poll();
+  int r = p[0];
+  int c = p[1];
+
+2) Create a Pair Class (More Readable -> good for interviews)
+   Queue<Pair> q = new LinkedList<>();
+   q.add(new Pair(i, j));
+
+   Pair p = q.poll();
+   int r = p.x;
+   int c = p.y;
+
+3) BFS is better for shortest path but only in Unweighted Graphs
+
+4) Instead of creating a visited array change the values in questions matrix 
+like Number of Islands, Rotten oranges.
+
+5)For creating multi-directions we either take a delX, delY array consisting of 
+{-1,0,1,0} for 4 directions or run nested loops from -1 to 1 for 8 directions 
+used in Islands in GFG.
+
