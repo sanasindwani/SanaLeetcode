@@ -29,4 +29,6 @@ nearest something
 Use DFS when: just traverse, detect cycle, count islands, components
 Use Dijkstra when: weighted shortest path
 
+7)MultiSource BFS is used in problems like RottenOranges, nearest 1/0 cell 
+
 
