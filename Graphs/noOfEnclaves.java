@@ -55,6 +55,14 @@ public class noOfEnclaves {
                 vis[i][n-1] = 1;
             }
         }
+        /*for(int i = 0; i < n; i++){
+    for(int j = 0; j < m; j++){
+        // first row, first col, last row, last col
+        if(i == 0 || j == 0 || i == n-1 || j == m-1){
+            
+            }
+          }
+        } */
         int ans = bfs(q,vis,grid);
         int res = 0;
         for(int i = 0; i < m;i++){
