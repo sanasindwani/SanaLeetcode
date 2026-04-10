@@ -35,3 +35,37 @@ public class cycleinDirectedDFS {
         return false;
     }
 }
+// SAME CODE BUT WITHOUT PATH-VIS thus optimized
+/*
+class Solution {
+    
+    boolean dfs(int node, int[] vis, ArrayList<ArrayList<Integer>> adj){
+        vis[node] = 2;
+        
+        for(int i : adj.get(node)){
+            if(vis[i] == 0){
+                if(dfs(i,vis,adj)) return true;//mistake
+            }
+            if(vis[i] == 2) return true;
+        }
+        vis[node] = 1;//mistake
+        return false;
+    }
+    public boolean isCyclic(int V, int[][] edges) {
+        // code here
+         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+         for(int i = 0; i < V; i++) adj.add(new ArrayList<Integer>());
+         for(int j = 0; j < edges.length; j++){
+             adj.get(edges[j][0]).add(edges[j][1]);
+         }
+        int[] vis = new int[V];
+        //int[] pathVis = new int[V];
+        
+        for(int i = 0; i < V; i++){
+            if(vis[i] == 0){
+                if(dfs(i, vis,adj)) return true;
+            }
+        }
+        return false;
+    }
+} */
