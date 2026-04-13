@@ -31,4 +31,8 @@ Use Dijkstra when: weighted shortest path
 
 7)MultiSource BFS is used in problems like RottenOranges, nearest 1/0 cell 
 
-
+8) We can't pass parameters with class declaration 
+9) Constructor name should be same as class name and java is case sensitive so 
+check it beforehand.
+10) Pair class doesn't need generics until we call another class in them like
+Integer etc.

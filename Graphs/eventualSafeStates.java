@@ -8,6 +8,8 @@ import java.util.Queue;
 
 public class eventualSafeStates {
     // Leetcode
+    // extra space used for reversal of graph 
+    // extra time for sorting
     public List<Integer> eventualSafeNodes(int[][] graph) {
       int m = graph.length;
       ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
