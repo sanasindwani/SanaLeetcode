@@ -36,3 +36,19 @@ Use Dijkstra when: weighted shortest path
 check it beforehand.
 10) Pair class doesn't need generics until we call another class in them like
 Integer etc.
+
+11)the core reason is edge weights, not just data structure.
+
+BFS → works when all edges have equal weight (i.e 1)
+Dijkstra → needed when edges have different weights.
+So difference is:
+BFS
+Uses queue
+No need to compare distances
+First time you reach a node = shortest path
+Uses visited
+
+Dijkstra
+Uses priority queue
+Must compare and update distances
+Can revisit nodes with better distance
