@@ -4,6 +4,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class shortestPathinBinaryMazeGFG {
+    // can use simple BFS also -> more optimized
+    // check for if they contain 0 at either source and destinition are 0 and return -1(unreachable)
+    // then check if they are same return 0
     class Pair{
         int dist;
         int[] xy;
