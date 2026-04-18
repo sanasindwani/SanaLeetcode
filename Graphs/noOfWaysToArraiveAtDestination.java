@@ -1,4 +1,7 @@
-class Solution {
+package Graphs;
+import java.util.*;
+
+class noOfWaysToArriveAtDestination {
     class Pair{
         long time;
         int node;
