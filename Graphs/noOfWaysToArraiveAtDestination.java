@@ -47,6 +47,9 @@ class noOfWaysToArriveAtDestination {
                     pq.add(new Pair(ntime, ni.node));
                 }
                 else if(ntime == time[ni.node]){
+                    // parent node se voh path kitni node se aara
+                    // after parent is copied to des node now we see how many nodes can carry same parent node path 
+                    // total parent * parent[ways]
                     ways[ni.node] = (ways[ni.node] + ways[curr.node]) % mod;
                 }
             }
