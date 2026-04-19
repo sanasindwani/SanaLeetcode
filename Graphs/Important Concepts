@@ -52,3 +52,23 @@ Dijkstra
 Uses priority queue
 Must compare and update distances
 Can revisit nodes with better distance
+
+12) Modulo gives the remainder when one number is divided by another.
+   lik a mod m=remainder when a is divided by m 
+   Why we use it :- 
+-Prevent integer overflow
+-Keep numbers within limits
+-Required in problems with very large answers
+-Makes calculations efficient
+
+Common Mod Value -> 10^9 +7 = 1000000007
+Prime number , Fits in integer range, Used in most coding problems
+if a < m -> a mod m = a
+
+When to Apply Mod :-
+ - After every addition / multiplication in loops
+In problems like:
+ - DP
+ - Graph paths (like Dijkstra count paths)
+ - Combinatorics
+ as it keeps the numbers small by storing only the remainder.
