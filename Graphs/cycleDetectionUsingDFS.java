@@ -10,7 +10,7 @@ public class cycleDetectionUsingDFS {
         
         for(int i : adj.get(node)){
             if(vis[i] == 0){
-            .    if(dfs(i, node, adj, vis)) return true; 
+                if(dfs(i, node, adj, vis)) return true; 
             }
             else if(i != parent) return true;
         }
