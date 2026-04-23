@@ -2,7 +2,7 @@ package DP;
 
 public class frogJump {
     // SPACE OPTIMIZED
-// FINAL CODE
+    // FINAL CODE
   int minCost(int[] height){
       int n = height.length;
       if(n == 1) return 0;
@@ -39,7 +39,20 @@ public class frogJump {
         return cost(height, n, dp);
     }
 }*/
-
+/*class Solution{
+    int minCost(int[] height){
+        int n = height.length;
+        int[] dp = new int[n];
+        dp[0] = 0;
+        for(int i = 1; i < n; i++){
+            int fs = dp[i - 1] + Math.abs(height[i] - height[i-1]);
+            int ss = Integer.MAX_VALUE; // handles when n = 1
+            if(i > 1) ss = dp[i - 2] + Math.abs(height[i] - height[i-2]);
+            dp[i] = Math.min(fs,ss);
+        }
+        return dp[n-1];
+    }
+}*/
 // MEMOIZATION
 // Now the recursion is self sufficient and is not dependent on DP 
 /*class Solution {
@@ -121,4 +134,3 @@ public class frogJump {
         return ans;
     }
 }*/
-    
