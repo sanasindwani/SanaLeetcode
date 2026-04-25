@@ -6,7 +6,8 @@ import java.util.List;
 public class Subsets {
     void totalSubsets(List<List<Integer>> lst, List<Integer> ls, int n, int[] nums, int k){
         if(n >= k){
-        lst.add(new ArrayList<>(ls));
+        lst.add(new ArrayList<>(ls)); //doing a mistake here lst.add(ls) 
+        // the list will add a reference to the list ls and not actual elements thus output is empty lists instead create a new list and copy it in main list to store 
         return;
         } 
         ls.add(nums[n]);
