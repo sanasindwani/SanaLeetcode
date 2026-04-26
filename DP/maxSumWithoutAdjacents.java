@@ -1,4 +1,3 @@
-package DP;
 public class maxSumWithoutAdjacents {
 //Space Optimization
 //TC -> O(N)
@@ -53,6 +52,25 @@ public class maxSumWithoutAdjacents {
         int[] dp = new int[arr.length];
         Arrays.fill(dp, -1);
         int ans = maxSum(arr, 0, dp);
+        return ans;
+    }
+}*/
+/*class Solution {
+    int maxSum(int[] arr, int n, int[] dp){
+        if(n == 0) return arr[0]; 
+        if(n < 0) return 0;
+        if(dp[n] != -1) return dp[n];
+        int pick = maxSum(arr, n-1, dp) ;
+        int notPick = maxSum(arr, n-2, dp) + arr[n];
+        dp[n] = Math.max(pick, notPick);
+        
+        return dp[n];
+    }
+    int findMaxSum(int arr[]) {
+        int n = arr.length;
+        int[] dp = new int[n];
+        Arrays.fill(dp, -1);
+        int ans = maxSum(arr, n-1, dp);
         return ans;
     }
 }*/
