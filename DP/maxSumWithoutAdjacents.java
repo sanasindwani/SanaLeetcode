@@ -1,5 +1,63 @@
+package DP;
 public class maxSumWithoutAdjacents {
-    //RECURSION 
+//Space Optimization
+//TC -> O(N)
+//SC -> O(1)
+    int findMaxSum(int arr[]) {
+        int n = arr.length;
+        if(n == 0) return 0;
+        if(n == 1) return arr[0];
+        int prev2 = arr[0];
+        int prev1 = Math.max(arr[0], arr[1]);
+        for(int i = 2; i < n; i++){
+           int curri = Math.max(prev1, prev2 + arr[i]);
+           prev2 = prev1;
+           prev1 = curri;
+        }
+        return prev1;
+    }
+}
+
+//Tabulation
+//TC -> O(N)
+//SC -> O(N)
+/*class Solution {
+    int findMaxSum(int arr[]) {
+        int n = arr.length;
+        if(n == 1) return arr[0];
+        int[] dp = new int[arr.length];
+        dp[0] = arr[0];
+        dp[1] = Math.max(arr[0], arr[1]);
+        for(int i = 2; i < n; i++){
+            dp[i] = Math.max(dp[i-1], dp[i-2] + arr[i]);
+        }
+        return dp[n-1];
+    }
+}*/
+
+//Memoization
+//TC -> O(N)
+//SC -> O(N) + O(N)
+//best answer I can get starting at index n
+/*class Solution {
+    int maxSum(int[] arr, int n, int[] dp){
+        if(n >= arr.length) return 0;
+        if(dp[n] != -1) return dp[n];
+        int l = maxSum(arr, n+1, dp) ;
+        int r = maxSum(arr, n+2, dp) + arr[n];
+        dp[n] = Math.max(l, r);
+        return dp[n];
+    }
+    int findMaxSum(int arr[]) {
+        if(arr.length == 1)return arr[0];
+        int[] dp = new int[arr.length];
+        Arrays.fill(dp, -1);
+        int ans = maxSum(arr, 0, dp);
+        return ans;
+    }
+}*/
+//RECURSION 
+// TC -> O(2^n)
 /*class Solution {
     int maxSum(int[] arr, int n){
         if(n >= arr.length) return 0;
@@ -106,4 +164,3 @@ int f(index){
     return combine(choice1, choice2);
 }
 */
-}
