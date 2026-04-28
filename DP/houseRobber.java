@@ -24,8 +24,7 @@ public class houseRobber {
         }
         return Math.max(findMaxSum(a1), findMaxSum(a2));
     }
-}
-    dd*/
+}*/
      int maxSum(int[] nums, int n, int k, int[] dp){
         if(n > k) return 0;
         if(dp[n] != -1) return dp[n];
