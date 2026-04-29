@@ -30,6 +30,31 @@ public class numberOfProvinces {
         return count;
     }
 }
+//Using DFS
+/*class Solution {
+    void dfs(int[][] isConnected, int node, boolean[] vis){
+        vis[node] = true;
+        for(int i = 0; i < isConnected.length; i++){
+            if(isConnected[node][i] == 1 && !vis[i]){
+                dfs(isConnected, i, vis);
+            }
+        }
+    }
+
+    public int findCircleNum(int[][] isConnected) {
+        int n = isConnected.length;
+        int count = 0;
+        boolean[] vis = new boolean[n];
+
+        for(int i = 0; i < n; i++){
+            if(!vis[i]){
+                count++;
+                dfs(isConnected, i, vis);
+            }
+        }
+        return count;
+    }
+} */
 
 // Using BFS 
 /*class Solution {
