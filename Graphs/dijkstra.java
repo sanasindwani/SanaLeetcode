@@ -13,7 +13,7 @@ class dijkstra {
             this.dist = dist;
         }
     }
-    //g
+    
     public int[] Dijkstra(int V, int[][] edges, int src) {
         ArrayList<ArrayList<Pair>> adj = new ArrayList<>();
         for(int i = 0; i < V; i++) adj.add(new ArrayList<Pair>());
