@@ -1,3 +1,4 @@
+package DP;
 public class maxSumWithoutAdjacents {
 //Space Optimization
 //TC -> O(N)
@@ -60,8 +61,8 @@ public class maxSumWithoutAdjacents {
         if(n == 0) return arr[0]; 
         if(n < 0) return 0;
         if(dp[n] != -1) return dp[n];
-        int pick = maxSum(arr, n-1, dp) ;
-        int notPick = maxSum(arr, n-2, dp) + arr[n];
+        int notPick = maxSum(arr, n-1, dp) ;
+        int pick = maxSum(arr, n-2, dp) + arr[n];
         dp[n] = Math.max(pick, notPick);
         
         return dp[n];
