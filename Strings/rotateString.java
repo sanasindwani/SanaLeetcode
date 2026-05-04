@@ -8,3 +8,4 @@ class rotateString{
         else                 return false;
     }
 }
+A
