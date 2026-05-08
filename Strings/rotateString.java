@@ -1,4 +1,3 @@
-package Strings;
 
 class rotateString{
     public boolean RotateString(String s, String goal) {
