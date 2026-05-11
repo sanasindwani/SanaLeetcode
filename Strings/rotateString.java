@@ -6,4 +6,3 @@ class rotateString{
         else                 return false;
     }
 }
-,,
