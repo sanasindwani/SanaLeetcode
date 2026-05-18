@@ -7,4 +7,4 @@ class rotateString{
         if(s.contains(goal)) return true;
         else                 return false;
     }
-}f
+}
