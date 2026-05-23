@@ -1,4 +1,3 @@
-package Arrays;
 // %n will check for the last digit (nums.length-1) with first as when i = n-1 there by i+1 will be nums.length which is n -> % n will give us 0 -> first element 
 // plus if count <= 1 returns true(already sorted or 1 occurence in the loop where i+1 < i)
 // else return false
