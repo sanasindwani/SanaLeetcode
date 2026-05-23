@@ -1,4 +1,49 @@
 package DP;
+// SPACE OPTIMIZATION
+// Bottom up
+class Solution {
+    public int maximumPoints(int[][] mat) {
+        int x = mat.length;
+        int p0 = mat[x-1][0];
+        int p1 = mat[x-1][1];
+        int p2 = mat[x-1][2];
+        
+        for(int i = x-2; i >= 0; i--){
+         int curr0 = mat[i][0] + Math.max(p1,p2);
+         int curr1 = mat[i][1] + Math.max(p0,p2);
+         int curr2 = mat[i][2] + Math.max(p0,p1);
+         
+         p0 = curr0;
+         p1 = curr1;
+         p2 = curr2;
+        }
+       int max = Math.max(p0, Math.max(p1,p2));
+       return max;
+    }
+}
+// Top down 
+/*class Solution {
+    public int maximumPoints(int[][] mat) {
+
+        int a = mat[0][0];
+        int b = mat[0][1];
+        int c = mat[0][2];
+
+        for(int i = 1; i < mat.length; i++) {
+
+            int na = mat[i][0] + Math.max(b, c);
+            int nb = mat[i][1] + Math.max(a, c);
+            int nc = mat[i][2] + Math.max(a, b);
+
+            a = na;
+            b = nb;
+            c = nc;
+        }
+
+        return Math.max(a, Math.max(b, c));
+    }
+}*/
+
 // TABULATION
 
 /*class Solution {
