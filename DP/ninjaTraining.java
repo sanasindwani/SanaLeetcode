@@ -134,9 +134,8 @@ class Solution {
         if(dp[x][y+1] != -1) return dp[x][y+1];
         int max = 0;
         for(int i = 0; i < mat[0].length; i++){
-            int sum = 0;
             if(i != y){
-                sum += mat[x][i] + maxAns(mat, x+1, i, dp); 
+               int sum = mat[x][i] + maxAns(mat, x+1, i, dp); 
                 max = Math.max(max, sum);
             }
         }
@@ -149,5 +148,88 @@ class Solution {
         }
         int res = maxAns(mat, 0, -1, dp);
         return res;
+    }
+}*/
+// Sir's methods
+//Recursion + converted into memo
+
+/*class Solution {
+    int sum(int index, int day, int[][] mat, int[][] dp){
+        if(index == 0){
+            int max = 0;
+            for(int i = 0; i < 3; i++){
+                if(i != day){
+                    max = Math.max(max, mat[0][i]);
+                }
+            }
+            return max;
+        }
+        if(dp[index][day] != -1) return dp[index][day];
+        int maxi = 0;
+        for(int j = 0; j < 3; j++){
+            if(j != day){
+                int points = mat[index][j] + sum(index-1, j, mat, dp);
+                maxi = Math.max(maxi, points);
+            }
+        }
+        return dp[index][day] = maxi;
+    }
+    public int maximumPoints(int[][] mat) {
+        int x = mat.length;
+        int[][] dp = new int[x][4];
+        for(int i = 0; i < x; i++){
+            Arrays.fill(dp[i], -1);
+        }
+        int ans = sum(x-1, 3, mat, dp);
+        return ans;
+    }
+}*/
+// Tabulation 
+/*class Solution {
+    public int maximumPoints(int[][] mat) {
+        int x = mat.length;
+        int[][] dp = new int[x][4];
+        dp[0][0] = Math.max(mat[0][1], mat[0][2]);
+        dp[0][1] = Math.max(mat[0][0], mat[0][2]);
+        dp[0][2] = Math.max(mat[0][0], mat[0][1]);
+        dp[0][3] = Math.max(mat[0][0], Math.max(mat[0][1], mat[0][2]));
+        
+
+        for(int i = 1; i < x; i++){
+            for(int j = 0; j < 4; j++){
+                 int max = 0;
+                for(int k = 0; k < 3; k++){
+                    if(j != k){
+                    int points = mat[i][k] + dp[i-1][k];
+                    max = Math.max(max, points);
+                }
+            }
+            dp[i][j] = max;
+          }
+        }
+        return dp[x-1][3];
+    }
+}*/
+//Space Optimization
+/*class Solution {
+    public int maximumPoints(int[][] mat) {
+        int x = mat.length;
+        int[] prev = new int[4];
+        prev[0] = Math.max(mat[0][1], mat[0][2]);
+        prev[1] = Math.max(mat[0][0], mat[0][2]);
+        prev[2] = Math.max(mat[0][0], mat[0][1]);
+        prev[3] = Math.max(mat[0][0], Math.max(mat[0][1], mat[0][2]));
+        for(int i = 1; i < x; i++){
+            int[] temp = new int[4];
+            for(int j = 0; j < 4; j++){
+                for(int k = 0; k < 3; k++){
+                    if(k != j){
+                        temp[j] = Math.max(temp[j], mat[i][k] + prev[k]);
+                    }
+                }
+            }
+            prev = temp;
+        }
+        return prev[3];
     }
 }*/
