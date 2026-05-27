@@ -1,7 +1,21 @@
 package DP;
+//Using combinatrics 
+class Solution {
+    public int uniquePaths(int m, int n) {
+        int N = m + n - 2;
+        int r = m - 1; // or I can do n-1
+        long res = 1;
+        for(int i = 1; i <= r; i++){
+            res = res*(N - r + i)/i;
+        }
+        return (int)res;
+    }
+}
+
+
 // Solved using DP
 // Space Optimization
-class Solution {
+/*class Solution {
     public int uniquePaths(int m, int n) {
         int[] prev = new int[n];
         prev[0] = 1;
@@ -15,7 +29,7 @@ class Solution {
         }
         return prev[n-1];
     }
-}
+}*/
 // Tabulation
 /*class Solution {
     public int uniquePaths(int m, int n) {
