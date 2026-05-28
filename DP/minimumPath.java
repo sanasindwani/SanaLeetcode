@@ -3,6 +3,8 @@ package DP;
 public class minimumPath {
     // Space optimization
 // My methods
+// TC -> O(N*M)
+// SC -> O(N)
     public int minPathSum(int[][] grid) {
         int x = grid.length;
         int y = grid[0].length;
@@ -23,6 +25,8 @@ public class minimumPath {
     }
 }
 // Tabulation
+// TC -> O(N*M)
+// SC -> O(N*M)
 /*class Solution {
     public int minPathSum(int[][] grid) {
         int x = grid.length;
@@ -44,6 +48,8 @@ public class minimumPath {
     }
 }*/
 // Recursion + Memoization
+// TC -> O(N*M)
+// SC -> O(N*M) + O(N+M) { as M-1 + N-1 is path sum recusrion stack space}
 /*class Solution {
     int sana(int x, int y, int[][] grid, int[][] dp){
         if(x == 0 && y == 0) return grid[0][0];
