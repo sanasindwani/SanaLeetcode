@@ -1,7 +1,45 @@
-package DP;
+// TC-> recursion : O(3^n * 3^n) exponential 
+// SC  -> O(N)
 
-public class cherryPickupii {
-    // space optimization
+// TC -> memoization : O(n*m*n)*9
+// SC -> O(N) + O(N*M*M)
+
+// TC -> tabularization : O(n*m*n)*9
+// SC -> O(N*M*N)
+
+// TC -> space optimization : O(n*m*n)
+// SC -> O(N*N) 
+class Solution {
+    int fun(int i, int j1, int j2, int[][] grid, int[][][] dp){
+        if(j1 < 0 || j1 > grid[0].length-1 || j2 < 0 || j2 > grid[0].length-1) return (int)-1e8;
+        if(i == grid.length - 1){
+            if(j1 == j2) return grid[i][j1];
+            else         return grid[i][j1] + grid[i][j2];
+        }
+        if(dp[i][j1][j2] != -1) return dp[i][j1][j2];
+        int maxi = 0;
+        for(int d1 = -1; d1 < 2; d1++){
+            for(int d2 = -1; d2 < 2; d2++){
+              if(j1 == j2) maxi = Math.max(maxi, grid[i][j1] + fun(i+1, j1+d1,j2+d2, grid, dp));
+              else         maxi = Math.max(maxi, grid[i][j1] + grid[i][j2] + fun(i+1, j1 + d1, j2 + d2, grid, dp));
+            }
+        }
+        return dp[i][j1][j2] = maxi;
+    }
+    public int cherryPickup(int[][] grid) {
+        int x = grid.length;
+        int y = grid[0].length;
+        int[][][] dp = new int[x][y][y];
+        for(int i = 0; i < x; i++){
+            for(int j = 0; j < y; j++) Arrays.fill(dp[i][j], -1);
+        } 
+        return fun(0, 0, y-1, grid, dp);
+    }
+}
+
+
+// space optimization
+/*class Solution {
     public int cherryPickup(int[][] grid) {
         int x = grid.length;
         int y = grid[0].length;
@@ -33,7 +71,7 @@ public class cherryPickupii {
         }
         return front[0][y-1];
     }
-}
+}*/
 
 // Tabulation
 //my solution
