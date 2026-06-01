@@ -1,7 +1,7 @@
 package DP;
 // SPACE OPTIMIZATION
 // Bottom up
-class Solution {
+class ninjaTraning {
     public int maximumPoints(int[][] mat) {
         int x = mat.length;
         int p0 = mat[x-1][0];
