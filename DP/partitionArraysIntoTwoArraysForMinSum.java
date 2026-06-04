@@ -1,7 +1,6 @@
 package DP;
 
 
-import java.util.*;
 
 public class partitionArraysIntoTwoArraysForMinSum {
     //MEET IN THE MIDDLE ALGORITHM
@@ -9,7 +8,7 @@ public class partitionArraysIntoTwoArraysForMinSum {
 // so in order to manage time as well as space complexicity instead of checking / storing 2^N indexes we can use 2*n (divide the array into half)
 // meet in the middle algorithm -> bitmasking, binary search, even dp
 
-    public int minimumDifference(int[] nums) {
+    /*public int minimumDifference(int[] nums) {
         // find sum of the whole array will be required to fins part2 sum
         int N = nums.length, res = (int)1e8, sum = 0;
         for(int i = 0; i < N; i++) sum += nums[i];
@@ -73,7 +72,7 @@ public class partitionArraysIntoTwoArraysForMinSum {
         }
         // return minimum
         return res;
-    }
+    }*/
 }
 
 // TC -> O(2^N)
