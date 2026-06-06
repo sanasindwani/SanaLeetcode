@@ -11,7 +11,7 @@ import java.util.*;
 
 // TC -> space optimization : O(n*m*n)
 // SC -> O(N*N) 
-class Solution {
+class CherryPickup {
     int fun(int i, int j1, int j2, int[][] grid, int[][][] dp){
         if(j1 < 0 || j1 > grid[0].length-1 || j2 < 0 || j2 > grid[0].length-1) return (int)-1e8;
         if(i == grid.length - 1){
