@@ -1,6 +1,6 @@
 package DP;
 //Using combinatrics 
-class Solution {
+class uniqueGridPaths {
     public int uniquePaths(int m, int n) {
         int N = m + n - 2;
         int r = m - 1; // or I can do n-1
