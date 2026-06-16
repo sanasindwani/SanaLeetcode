@@ -1,3 +1,5 @@
+package Strings;
+
 /* Use stringbuilder and its functions
 - reverse()
 - append()
