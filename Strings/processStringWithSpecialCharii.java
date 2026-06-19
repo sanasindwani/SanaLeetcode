@@ -1,3 +1,4 @@
+package Strings;
 // TC -> O(N) -> for loop
 // SC -> no extra space
 class Solution {
