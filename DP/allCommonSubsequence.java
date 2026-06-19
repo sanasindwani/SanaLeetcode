@@ -1,8 +1,8 @@
 package DP;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+//import java.util.ArrayList;
+//import java.util.Collections;
+//import java.util.HashSet;
 
 public class allCommonSubsequence {
     /*import java.util.*;
@@ -82,7 +82,8 @@ class Solution {
     }
 }*/
 
-class Solution {
+//BEST SOLUTION
+/*class Solution {
     void cal(int n, int m, String s1, String s2, HashSet<String>[][] dp){
         
         if(dp[n][m] != null) return;
@@ -139,7 +140,7 @@ public ArrayList<String> allLCS(String s1, String s2) {
         dp[0][j].add("");
     }*/
     
-    cal(n, m, s1, s2, dp);
+    /*cal(n, m, s1, s2, dp);
     ArrayList<String> list = new ArrayList<>(dp[n][m]);
     
     Collections.sort(list);
@@ -147,7 +148,7 @@ public ArrayList<String> allLCS(String s1, String s2) {
     return list;
     
     }
-}
+}*/
 
 /*class Solution {
     public ArrayList<String> allLCS(String s1, String s2) {
