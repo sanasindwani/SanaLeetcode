@@ -2,7 +2,7 @@ package Strings;
 // Array is faster
 // might take more space but is better approach -> optimised 
 // as 126 is predefined small memory thus preffered 
-class Solution {
+class specialChar {
     public int numberOfSpecialChars(String word) {
         boolean[] vis = new boolean['z' + 1];
         int count = 0;
