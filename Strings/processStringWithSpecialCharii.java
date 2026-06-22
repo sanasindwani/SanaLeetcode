@@ -1,7 +1,7 @@
 package Strings;
 // TC -> O(N) -> for loop
 // SC -> no extra space
-class Solution {
+class processStringwithSpecialCharii {
     public char processStr(String s, long k) {
         long l = 0;
 
