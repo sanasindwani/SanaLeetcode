@@ -2,7 +2,7 @@
 // count sort is done using freq count
 // then reconstruct the array generally has less time complexicity  
 // can do using max also -> this is faster
-class Solution {
+class maxIceCreamBars {
     public int maxIceCream(int[] costs, int coins) {
         // such fixed space is always preffered for cp also
           //int[] freq = new int[100001];
