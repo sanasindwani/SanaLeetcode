@@ -7,7 +7,7 @@ package Strings;
 - toString()
 */
 
-class Solution {
+class processStringWithSpecialOperations {
     public String processStr(String s) {
         StringBuilder str = new StringBuilder();
 
