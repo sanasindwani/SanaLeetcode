@@ -40,7 +40,8 @@ class Solution {
         return ls;
     }
 }
- 
+// TC -> O(N)
+// SC -> O(N)
 // can do it using a switch or a flip-flop, no other data structure required
 /*class Solution {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root){
