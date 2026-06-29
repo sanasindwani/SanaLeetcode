@@ -16,6 +16,7 @@
 // my code + approach
 // DFS -> O(N) and every insertion into TreeMap/PriorityQueue is O(log N)
 // Therefore overall complexicity -> O(N log N)
+// SC -> O(3N + N) = O(4N) = O(N)
 class Solution {
     void DFS(TreeNode node, int col, int row, TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> map){
         if(node == null) return;
