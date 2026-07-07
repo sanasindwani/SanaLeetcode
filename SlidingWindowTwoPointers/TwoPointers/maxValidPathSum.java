@@ -15,7 +15,7 @@ class Solution {
         int max = 0;
         for(int j = k; j < n; j++){
             max = Math.max(max, pre[j-k] + nums[j]);
-        } mm
+        } 
 
         return max;*/
 
