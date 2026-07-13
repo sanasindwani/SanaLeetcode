@@ -3,7 +3,7 @@
 // we have to return a num and we can check if the particular ans is valid 
 // and the range is given and the search is monotonic 
 // we apply binary search instead of linear search using for loop
-
+// TC -> O(N) * log(max)
 class Solution {
      long reqTime(int[] arr, int speed) {
     long time = 0;
