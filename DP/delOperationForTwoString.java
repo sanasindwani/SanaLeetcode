@@ -1,5 +1,7 @@
 // same LCS code for two strings then subtract the LCS from both's strings length
 // then add the remaining len and return it
+// TC -> O(n*m)
+// Sc -> O(m)
 class Solution {
     public int minDistance(String word1, String word2) {
          int n = word1.length();
