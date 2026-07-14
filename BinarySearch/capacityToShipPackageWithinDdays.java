@@ -1,3 +1,5 @@
+// TC - > O(n log(sum - max))
+// SC -> O(1)
 class Solution {
     boolean pos(int cap, int[] weights, int days){
         int adj = 0;
