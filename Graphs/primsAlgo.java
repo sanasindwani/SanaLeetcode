@@ -1,3 +1,6 @@
+// Intution is -> Greedy
+// TC -> O(E log E)
+// SC -> O(E + V)
 class Solution {
     public int spanningTree(int V, int[][] edges) {
        int n = edges.length;
@@ -17,8 +20,9 @@ class Solution {
        
        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);
        pq.add(new int[]{0,0});
-       
+       // E
        while(!pq.isEmpty()){
+        // log E
            int[] val = pq.poll();
            int wt = val[0];
            int node = val[1];
@@ -27,8 +31,10 @@ class Solution {
            
            vis[node] = 1;
            sum += wt;
-           
+           // E log E
+           // E
            for(int[] i : adj.get(node)){
+                                  // log E
                if(vis[i[0]] != 1) pq.add(new int[]{i[1], i[0]});
            }
        }
