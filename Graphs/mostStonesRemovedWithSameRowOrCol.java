@@ -43,6 +43,7 @@ class DisjointSet{
 
 class Solution {
     public int removeStones(int[][] stones) {
+        // yaha pe we find out ki kya max row ya col me apun itta daal rahe hai ok
         int maxRow = 0;
         int maxCol = 0;
 
@@ -51,10 +52,11 @@ class Solution {
             maxCol = Math.max(maxCol, stone[1]);
         }
 
+// disjoint set joh hai voh max row + max col hoga jiska matlab hai ki index + 2 tak jayega
         DisjointSet ds = new DisjointSet(maxRow + maxCol + 2);
 
         // now we'll connect all rows and coloumns 
-          // now if we'll create a grid to check the ultimate parents it'll be too costly usse better option hai ki ham map me store kar dein 
+          // now if we'll create a grid to check the ultimate parents it'll be too costly usse better option hai ki ham set mein store kar dein 
 
         HashSet<Integer> stoneNodes = new HashSet<>();
         // we can make a set also
