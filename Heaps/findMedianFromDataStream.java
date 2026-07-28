@@ -45,3 +45,67 @@ class MedianFinder {
  * obj.addNum(num);
  * double param_2 = obj.findMedian();
  */
+
+
+class MedianFinder {
+    PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+    PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+
+     public MedianFinder() {
+        
+    }
+
+    public void addNum(int num) {
+        if(maxHeap.isEmpty() || num < maxHeap.peek()){
+            maxHeap.add(num);
+        } else {
+            minHeap.add(num);
+        }
+
+        if(maxHeap.size() > minHeap.size() + 1){
+            minHeap.add(maxHeap.poll());
+        }
+        else if(maxHeap.size() < minHeap.size()){
+            maxHeap.add(minHeap.poll());
+        }
+    }
+
+    public double findMedian() {
+        if(maxHeap.size() == minHeap.size()){
+            int sum = maxHeap.peek() + minHeap.peek();
+            return ((double)sum/2);
+        } 
+
+        return maxHeap.peek();
+    }
+}
+
+// Brute force approach 
+// Will give TLE because of insertion sort again and again after every element and since 5*10^4 calls are being made we can even hai O(n log n)
+// thus we'll use priority queue 
+
+/*class MedianFinder {
+    List<Integer> ls = new ArrayList<>();
+
+    public MedianFinder() {
+        
+    }
+    
+    public void addNum(int num) {
+        ls.add(num);
+        Collections.sort(ls);
+    }
+    
+    public double findMedian() {
+        int n = ls.size();
+        if(n % 2 == 1) return ls.get(n/2);
+        else           return ((double)(ls.get(n/2) + ls.get(n/2 -1))/2);
+    }
+}*/
+
+/**
+ * Your MedianFinder object will be instantiated and called as such:
+ * MedianFinder obj = new MedianFinder();
+ * obj.addNum(num);
+ * double param_2 = obj.findMedian();
+ */
