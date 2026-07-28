@@ -4,6 +4,8 @@
 // eg -> dcaacd isko agar ham do halfs mein divide kar denge then it'll become dca|acd abb pehle half ko sort kar lenge then it'll become acd|acd abb dusre half ko usko mirror image bana denge acd|dca
 // abb with odd length of the string = bacdcab -> agar isko ham do half me divide karenge then it'll become bac|d|cab abb first half sort karenge toh it'll be abc|d|cab then uska reverse mirror image dusri side abcdcba
 
+// or instead of reversing using string builder we can perform iteration on first half and put the values at index i+mid or n-i-1 (since its 0 indexed)
+
 class Solution {
   public String smallestPalindrome(String s) {
     final int n = s.length();  // The final keyword is used in Java to restrict modification.
