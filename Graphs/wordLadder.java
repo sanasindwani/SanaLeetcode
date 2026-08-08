@@ -87,3 +87,100 @@ class Solution {
         return 0;
     }
 }*/
+
+
+// WordLadder matlab -> HashSet + BFS + checking all possible char at that position
+// I use BFS because every edge represents changing one character, so the first time I reach endWord, I've found the shortest transformation sequence. I remove words from the HashSet when I enqueue them, which prevents revisiting the same word.
+
+/*class Solution {
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        // firstly we'll make a hashset 
+        // as we can retrieve from hashset with a TC of O(1) it will give us constant lookup
+
+        HashSet<String> dic = new HashSet<>(wordList);
+        if(dic.contains(endWord) == false) return 0;
+
+        // now we'll use bfs and the use a count and as soon as we get the endWord we'll return the count 
+        int count = 0;
+        Queue<String> q = new LinkedList<>();
+        q.add(beginWord);
+
+        while(!q.isEmpty()){
+            int size = q.size();
+            count++;
+
+            for(int len = 0; len < size; len++){
+                String s = q.poll();
+
+                char[] arr = s.toCharArray();
+                
+                for(int i = 0; i < arr.length; i++){
+                    char orig = arr[i];
+
+                    for(char ch = 'a'; ch <= 'z'; ch++){
+                        if (ch == orig) continue;
+
+                        arr[i] = ch;
+
+                        String str = new String(arr);
+
+                        if(str.equals(endWord)) return count+1;
+                        if(dic.contains(str)){
+                            dic.remove(str);
+                            q.add(str);
+                        }
+                    }
+
+                    arr[i] = orig;
+                }
+            }
+        }
+        return 0;
+    }
+}*/
+
+class Solution {
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+
+        // i used bfs because every edge represents changing one character and when i found the endWord for the first time that will be the shortest transformation sequence 
+        // hashset provides constant retrieval of words 
+        // and i remove from hashset after i found the word thus would prevent revisting them again and again
+
+        HashSet<String> set = new HashSet<>(wordList);
+        if(set.contains(endWord) == false) return 0;
+
+        Queue<String> q = new LinkedList<>();
+        q.add(beginWord);
+        int count = 0;
+
+        while(!q.isEmpty()){
+            int size = q.size();
+            count++;
+
+            for(int i = 0; i < size; i++){
+                String s = q.poll();
+
+                char[] arr = s.toCharArray();
+
+                for(int len = 0; len < arr.length; len++){
+                    char orig = arr[len];
+
+                    for(char ch = 'a'; ch <= 'z'; ch++){
+                        arr[len] = ch;
+
+                        String str = new String(arr);
+// equals hai equal nahi
+                        if(str.equals(endWord)) return count+1;
+
+                        if(set.contains(str)){
+                            set.remove(str);
+                            q.add(str);
+                        }
+                    }
+                    arr[len] = orig;
+                }
+            }
+        }
+        return 0;
+    }
+}
