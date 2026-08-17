@@ -50,5 +50,3 @@ class Solution {
         return 0;
     }
 }
-
-shj
