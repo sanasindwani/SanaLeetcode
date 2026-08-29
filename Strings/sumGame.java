@@ -69,5 +69,3 @@ class Solution {
         return totalQuestionMarks % 2 == 1 || sumDifference != 9 * questionMarkDifference / 2;
     }
 }*/
-
-ss
